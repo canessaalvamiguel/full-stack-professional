@@ -23,17 +23,17 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-    @Bean
-    CommandLineRunner runner(
-            CustomerRepository customerRepository,
-            PasswordEncoder passwordEncoder,
-            S3Service s3Service,
-            S3Buckets s3Buckets) {
-        return args -> {
-            createRandomCustomer(customerRepository, passwordEncoder);
-            testBucketUploadAndDownload(s3Service, s3Buckets);
-        };
-    }
+//    @Bean
+//    CommandLineRunner runner(
+//            CustomerRepository customerRepository,
+//            PasswordEncoder passwordEncoder,
+//            S3Service s3Service,
+//            S3Buckets s3Buckets) {
+//        return args -> {
+//            createRandomCustomer(customerRepository, passwordEncoder);
+//            testBucketUploadAndDownload(s3Service, s3Buckets);
+//        };
+//    }
 
     private static void testBucketUploadAndDownload(S3Service s3Service, S3Buckets s3Buckets) {
         s3Service.putObject(s3Buckets.getCustomer(), "foo", "Hello World".getBytes());

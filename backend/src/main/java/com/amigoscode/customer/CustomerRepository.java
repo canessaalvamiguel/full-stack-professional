@@ -15,7 +15,7 @@ public interface CustomerRepository
     Optional<Customer> findCustomerByEmail(String email);
     @Modifying
     @Query("UPDATE Customer c SET c.profileImageId = ?1 WHERE c.id = ?2")
-    int updateProfileImageId(String profileImageId, Integer customerId, Sort sort);
+    int updateProfileImageId(String profileImageId, Integer customerId);
 
 
 }
